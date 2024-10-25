@@ -200,6 +200,7 @@ static void loop(void)
     }
 }
 
+// 参考SDL源码 \SDL\test\checkkeys.c
 int main(int argc, char* argv[])
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
