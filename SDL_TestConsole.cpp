@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "sdl_examples_header.h"
 
 #include "SDL3/SDL.h"
 
@@ -201,7 +202,7 @@ static void loop(void)
 }
 
 // 参考SDL源码 \SDL\test\checkkeys.c
-int main(int argc, char* argv[])
+int basic_tests()
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "无法初始化SDL: " << SDL_GetError() << std::endl;
@@ -227,6 +228,21 @@ int main(int argc, char* argv[])
 
     SDL_DestroyWindow(window);
     SDL_Quit();
+
+    return 0;
+}
+
+int main(int argc, char* argv[])
+{
+    //testrumble_main(argc, argv);
+    testhaptic_main(argc, argv);
+
+    // Audio
+    // command-line: D:\Media\Ring07.wav D:\Media\Ring07_resample.wav 44100 1
+    //testresample_main(argc, argv);
+
+    // keyboard events
+    //basic_tests();
 
 	return 0;
 }
